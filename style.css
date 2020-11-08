@@ -1,0 +1,518 @@
+
+/* settings for the all pages! */
+
+html, body{
+    font-family: 'Baloo Da 2', cursive;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* remove arrors from input type number */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* button type */
+button{
+    background:none;
+    border:none;
+  }
+
+  button {
+    outline-style: none;
+}
+
+/* background image */
+.background-img{
+    position: absolute;
+      top: -1px;
+      right: 0;
+      z-index: -1;
+
+}
+
+.container{
+    font-family: 'Baloo Da 2', cursive;
+}
+
+.background-welcome{
+    background: #007bff;
+    width: auto;
+    height: auto;
+    color: white;
+    font-size: 35px;
+    font-weight: 100;
+    padding: 28px 35px 0 35px;
+    line-height: 33px;
+    transition-duration: 1s;
+    margin-bottom: 25px;
+    animation: shimmy2 2.5s infinite;
+    animation-direction: alternate;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+
+}
+
+@keyframes shimmy2 {
+    0% {
+      transform: translate(0, 0);    
+    }
+    100% {
+      transform: translate(0px, 30px);
+    } }
+
+
+.bold-welcome{
+    color: yellow;
+    font-weight: 600;
+}
+
+
+.second-message{
+    font-size: 20px;
+    padding-top: 18px;
+    line-height: 22px;
+}
+
+.third-message{
+    font-size: 23px;
+    padding-top: 12px;
+    line-height: 22px;
+    color: yellow;
+    font-weight: 600;
+    padding-bottom: 30px;
+}
+
+
+.form-margin{
+margin-left: 10px;
+}
+
+.input-label{
+    font-weight: 600;
+    font-size: 23px;
+    color: rgb(173, 173, 173);
+    letter-spacing: -0.2px;
+    background: #f4f4ff;
+    padding: 0 35px 0 35px;
+    border-radius: 100px;
+}
+
+.error{
+    color: red;
+}
+
+
+#logo-sudoku{
+    width:180px;
+    height: 180px;
+    margin: 50px 15px 50px 40px;
+    animation: shimmy 2.5s infinite;
+    animation-direction: alternate;
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+
+
+}
+
+@keyframes shimmy {
+    0% {
+      transform: translate(0, 0);    
+    }
+    100% {
+      transform: translate(0px, 30px);
+    }
+    from {
+        -webkit-filter: hue-rotate(0);
+        -moz-filter: hue-rotate(0);
+        -ms-filter: hue-rotate(0);
+        filter: hue-rotate(0);
+      }
+      to {
+        -webkit-filter: hue-rotate(360deg);
+        -moz-filter: hue-rotate(360deg);
+        -ms-filter: hue-rotate(360deg);
+        filter: hue-rotate(360deg);
+      }
+}
+
+    
+
+.btn-level{
+    margin-left: 10px;
+    margin-bottom: 20px;
+    height: 60px;
+}
+
+.good-luck{
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: #007bff;
+    text-align: center;
+    animation: right-left 1.5s infinite;
+    animation-direction: alternate;
+}
+ 
+@keyframes right-left {
+    from {color: c;}
+    to {color: grey;}
+    0% {
+      transform: translate(0, 0);
+      transform: rotateX(360deg);    
+    }
+    100% {
+      transform: translate(100px, 0px);
+      transform: rotateX(0deg);
+    }}
+
+.game-rols{
+    margin-left: 15px;
+    line-height: 20px;
+    color: #007bff;
+}
+
+#levelPart{
+    display: none;
+}
+
+
+.register-link{
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    width: 100%;
+    margin: 20px 10px 10px 10px;
+    border-top: solid #f4f4ff 2px;
+    border-bottom: solid #f4f4ff 2px;
+    padding: 5px;
+    outline: none;
+}
+.register-link:hover{
+    border-radius: 100px;
+    background-color: #f4f4ff;
+    outline: none;
+}
+.register-link::after{
+    border: none;}
+
+.register-now{
+    color: #007bff;
+    font-weight: 500;
+}
+
+
+
+#register{
+    display: none;
+    animation: flip-in 0.5s ease-in-out;
+    animation-direction: alternate;
+    }
+
+#logIn, #levelPart, #gamePart{
+    animation: flip-in 0.5s ease-in-out;
+    animation-direction: alternate;
+}
+
+    @keyframes flip-in {
+        0% {
+          transform: rotateY(180deg); 
+          opacity: 0.2;   
+        }
+        100% {
+            transform: rotateX(0deg);  
+            opacity: 1;
+        }}
+
+.level-button{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+    border: 1px solid #007bff;
+    margin-left: 10px;
+    color: #007bff;
+    margin-bottom: 15px;
+    outline: none;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+}        
+
+.level-button:hover{
+    border: 0px solid black;
+    background-color: #007bff;
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 100px;
+    border: rgb(255, 255, 255) 3px solid;
+}
+
+.level-button::after{
+    border: 0px solid black;
+    background-color: #007bff;
+    outline: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 100px;
+    border: rgb(255, 255, 255) 3px solid;
+}
+
+.level-button::after{
+    border: none;
+    outline: none;
+}
+
+.level-button:focus{
+    border: none;
+    outline: none;
+}
+
+
+
+
+/* with css reset */
+* { box-sizing: border-box; }
+table { margin: 10px; }
+tr:first-child td {
+	border-top-color: #007bff;
+}
+tr:nth-child(3n) td {
+	border-bottom-color: #007bff;
+}
+td {
+	border:1px solid lightgrey;
+	height: 40px;
+	width: 40px;
+}
+td:first-child {
+	border-left-color: #007bff;
+}
+td:nth-child(3n) {
+	border-right-color: #007bff;
+}
+#sudoku input {
+	padding: 0;
+	text-align: center;
+	border: 0;
+	height: 50px;
+	width: 50px;
+}
+
+input:hover {
+	background: #f0f0f0;
+}
+
+
+#sudoku{
+    margin-top: 120px;
+    font-size: 25px;
+}
+
+
+.logo-sudoku-game{
+    width:180px;
+    height: 180px;
+    margin: 100px 15px 50px 40px;
+    animation-direction: alternate;
+    box-shadow:  0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+}
+
+
+#again-button{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+    color: red;
+    margin-bottom: 15px;
+    outline: none;
+    background-color: yellow;
+    transition: 0.2s ease-in-out;
+    border-radius: 100px;
+}  
+
+#again-button:hover{
+    background-color: red;
+    outline: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    border-radius: 100px;
+}
+
+#again-button::after{
+    border: none;
+    outline: none;
+}
+
+#again-button:focus{
+    border: none;
+    outline: none;
+}
+
+
+#finish-button{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+    color: #007bff;
+    margin-bottom: 15px;
+    outline: none;
+    background-color: yellow;
+    transition: 0.2s ease-in-out;
+    border-radius: 100px;
+}  
+
+#finish-button:hover{
+    background-color: #007bff;
+    outline: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    border-radius: 100px;
+}
+
+#finish-button::after{
+    border: none;
+    outline: none;
+}
+
+#finish-button:focus{
+    border: none;
+    outline: none;
+}
+
+#timer{
+    width: 100%;
+    height: auto;
+    font-size: 50px;
+    color: rgb(177, 177, 177);
+    text-align: center;
+    border-top: solid #f4f4ff 5px;
+    border-bottom: solid #f4f4ff 5px;
+    margin-bottom: 30px;
+
+}
+
+#gamePart{
+    display: none;
+    }
+
+#winner{
+        display: none;
+        width: 100%;
+        height: auto;
+        font-size: 50px;
+        color: rgb(177, 177, 177);
+        text-align: center;
+        border-top: solid #f4f4ff 5px;
+        border-bottom: solid #f4f4ff 5px;
+        margin-bottom: 30px;
+        animation: right-left 3s infinite;
+        animation-direction: alternate;
+
+    }
+
+
+#total-time{
+    font-size: 23px;
+    color: rgb(177, 177, 177);
+    letter-spacing: -0.25;
+    font-weight: 500;
+    margin-top: 10px;
+    text-align: center;
+    width: 100%;
+
+}
+
+
+#totalMistakes{
+    font-size: 23px;
+    color: red;
+    letter-spacing: -0.25;
+    font-weight: 500;
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(236, 236, 236);
+
+}
+
+#newGame-button{
+    display: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+    color: #007bff;
+    margin-top: 15px;
+    outline: none;
+    background-color: yellow;
+    transition: 0.2s ease-in-out;
+    border-radius: 100px;
+}
+#newGame-button:hover{
+    background-color: #007bff;
+    outline: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    border-radius: 100px;
+}
+
+#newGame-button::after{
+    border: none;
+    outline: none;
+}
+
+#newGame-button:focus{
+    border: none;
+    outline: none;
+}
+
+#refresh{
+    display: none;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 300;
+    color: red;
+    margin-top: 15px;
+    outline: none;
+    background-color: yellow;
+    transition: 0.2s ease-in-out;
+    border-radius: 100px;
+}
+#refresh:hover{
+    background-color: red;
+    outline: none;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    color: yellow;
+    border-radius: 100px;
+}
+
+#refresh::after{
+    border: none;
+    outline: none;
+}
+
+#refresh:focus{
+    border: none;
+    outline: none;
+}

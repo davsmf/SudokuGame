@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Sudoku Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- link to css file -->
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <!-- favication -->
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <!-- link to font -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+
+  <!-- background -->
+  <div class="welcome-background">
+    <img class="background-img" src="img/hero-4-2.png" alt="">
+  </div>
+  <!-- end of background -->
+  <!-- top logo -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-1"></div>
+      <div class="col-sm-3"> <img id="logo-sudoku" src="img/logo.png" alt="logo-sudoku"></div></div>
+  <!-- end of top logo -->
+
+  <!-- welcome message -->
+    <div id="userPart">
+        <div class="row">
+          <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+            <div class="welcome-message background-welcome">Welcome to our <span class="bold-welcome"><br>Sudoku Game!</span>
+              <div class="second-message">Created by Mendy Joseph & David Meshulam</div>
+              <div class="third-message">Play and Enjoy!</div>
+            </div>
+          </div>
+  <!-- end of welcome message -->
+
+  <!-- log in form -->
+            <div class="col-lg-5">
+              <div id="logIn">
+        <div class="form-group form-margin">
+          <label for="InputUser" class="input-label">User name</label>
+          <input type="text" class="form-control" id="inputUser" placeholder="Enter your User name">
+          <p id="userError" class='error'></p>
+        </div>
+        <div class="form-group form-margin">
+          <label for="InputPassword" class="input-label">Password</label>
+          <input type="password" class="form-control" id="inputPassword" placeholder="Enter your Password">
+          <p id="passwordError" class='error'></p>
+        </div>
+        <div class="custom-control custom-checkbox form-margin my-1 mr-sm-2">
+            <input type="checkbox" class="custom-control-input" id="customControlInline">
+            <label class="custom-control-label" for="customControlInline">Remember me</label>
+          </div>
+        <button onclick="userValid('logIn')" type="button" class="btn form-margin btn-primary btn-block">Log in</button>
+        <button onclick="registerApplication('register')" class="register-link">Don't have an account? <span class="register-now">Register now!</span></button>
+      </div>
+  <!-- end of log in form -->
+         
+  <!-- register form -->
+        <div id="register">
+          <div class="form-group form-margin">
+            <label for="inputName" class="input-label">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Enter Name">
+            <p id="nameError" class='error'></p>
+          </div>
+
+          <div class="form-group form-margin">
+            <label for="InputPassword1" class="input-label">Password</label>
+            <input type="password" class="form-control" id="InputPassword1" placeholder="Enter Password">
+          </div>
+          <div class="form-group form-margin">
+              <label for="InputPassword2" class="input-label">Re-enter Password</label>
+              <input type="password" class="form-control" id="InputPassword2" placeholder="Re-enter Password">
+              <p id="passwordRegisterError" class='error'></p>
+            </div>
+            <div class="form-group form-margin">
+              <label for="InputEmail" class="input-label">Email</label>
+              <input type="email" class="form-control" id="InputEmail" placeholder="Enter Email">
+              <p id="emailError" class='error'></p>
+            </div>
+            <button onclick="userValid('register')" type="button" class="btn form-margin btn-primary btn-block">Register Now</button>
+            <button onclick="registerApplication('logIn')" class="register-link">have an account? <span class="register-now">Log in now!</span></button>
+        </div></div>
+      </div></div>
+<!-- end of register form -->
+
+
+<!-- level chooice-->
+    <div id="levelPart">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-1"></div>
+            <div class="col-lg-3">
+            <div class="welcome-message background-welcome">Welcome<br><span id="usenameInport" class="bold-welcome">abcd</span>
+              <div class="second-message">Here you have to choose the level off the game you want to play!</div>
+              <div class="third-message">Choose and play!</div>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <button onclick="levelChoose('easy')" type="button" class="level-button">Easy</button>
+            <button onclick="levelChoose('normal')" type="button" class="level-button">Normal</button>
+            <button onclick="levelChoose('hard')" type="button" class="level-button">Hard</button>
+        
+            <div class="good-luck">GOOD LUCK!</div>
+        </div>
+        <div class="col-md-5"><div class="game-rols">If you will select the <strong>EASY</strong> button you will receive a Sudoku with <strong>50% full already by the system.</strong><br><br>
+          If you will select the <strong>NORMAL</strong> button you will receive a Sudoku with <strong>30% full already by the system.</strong><br><br>
+          If you will select the <strong>HARD</strong> button, you will receive a Sudoku with <strong>20% full already by the system.</strong></div>
+    </div></div></div></div></div></div>
+    <!-- end of level chooice -->
+
+
+<div id="gamePart">
+    <!-- top logo -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"> <img class="logo-sudoku-game" src="img/logo.png" alt="logo-sudoku">
+        <div id="timer"></div>
+        <div id="winner"></div>
+        <button onclick="again()" type="button" id="again-button">Again</button>
+        <button onclick="finish()" type="button" id="finish-button">Finish</button>
+        <button onclick="newGame()" type="button" id="newGame-button">New game</button>
+        <button onClick="window.location.reload()" type="button" id="refresh">Log out</button>
+        <div id="total-time"></div>
+        <div id="totalMistakes"></div>
+    </div>
+  <!-- end of top logo -->
+  <div class="col-lg-1"></div>
+  <div class="col-lg-8">
+    <table id="sudoku">
+        <tbody>
+            <tr>
+                <td><input type="text" id="a0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="a8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="b0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="b8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="c0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="c8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="d0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="d8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="e0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="e8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="f0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="f8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="g0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="g8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="h0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="h8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+            <tr>
+                <td><input type="text" id="i0" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i1" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i2" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i3" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i4" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i5" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i6" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i7" oninput="numberOnly(this);" maxlength="1"></td>
+                <td><input type="text" id="i8" oninput="numberOnly(this);" maxlength="1"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
+
+<!-- link to javascript -->
+    <script src="script.js"></script>
+
+    <script>
+      //use numbers only on the input!
+      function numberOnly(element) {
+      // Use numbers only pattern, from 0 to 9
+      let regex = /[^1-9]/gi;
+      // This removes any other character but numbers as entered by user
+      element.value = element.value.replace(regex, "");}
+  
+  
+  //timer - to check the time
+      document.getElementById('timer').innerHTML = 000 + ":" + 00;
+  startTimer();
+  
+  function startTimer() {
+    let presentTime = document.getElementById('timer').innerHTML;
+    let timeArray = presentTime.split(/[:]+/);
+    let m = timeArray[0];
+    let s = checkSecond((timeArray[1] - 1 + 2));
+      if(s==00) {
+        m = m - 1+2;
+    }
+    
+    timerTotal = document.getElementById('timer').innerHTML =
+      m + ":" + s;
+  
+    setTimeout(startTimer, 1000);
+  }
+  
+  function checkSecond(sec) {
+    if (sec < 10 && sec >= 0) {
+      sec = "0" + sec;
+    } // add zero in front of numbers < 10
+    if (sec > 59) {
+      sec = "00";
+    }
+    return sec;
+  }
+  </script>
+</body>
+</html>
